@@ -1,0 +1,15 @@
+services:
+  apache:
+    build:
+     context: .
+    ports:
+      - 80:80
+    restart: always
+    volumes:
+      - ./html:/usr/local/apache2/htdocs/
+    networks:
+      - frontend
+
+networks:
+  frontend:
+    driver: bridge
