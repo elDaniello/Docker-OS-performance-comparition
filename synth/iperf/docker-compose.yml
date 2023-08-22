@@ -1,0 +1,17 @@
+version: "3.9"
+services:	
+    
+    iperf-server:
+      build: server
+      networks:
+          - iperf
+
+    iperf-client:
+      build: client
+      networks:
+        - iperf
+      depends_on:
+        - iperf-server
+
+networks:
+  iperf:
