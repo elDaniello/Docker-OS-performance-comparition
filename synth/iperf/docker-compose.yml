@@ -6,6 +6,8 @@ services:
       networks:
           - iperf
 
+      ports:
+        - 5201:5201
     iperf-client:
       build: client
       networks:
@@ -15,3 +17,4 @@ services:
 
 networks:
   iperf:
+    driver: host
